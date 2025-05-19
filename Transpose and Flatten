@@ -1,0 +1,6 @@
+import numpy
+N, M = map(int, input().strip().split())
+matrix = [ list(map(int, input().strip().split())) for _ in range(N)]
+np_arr = numpy.array(matrix)
+print(numpy.transpose(np_arr))
+print(np_arr.flatten())
