@@ -1,0 +1,14 @@
+import calendar
+from datetime import datetime
+
+# Read input: month, day, year
+month, day, year = map(int, input().split())
+
+# Create a date object
+date_obj = datetime(year, month, day)
+
+# Get the weekday name (e.g., Monday, Tuesday, etc.)
+day_name = calendar.day_name[date_obj.weekday()]
+
+# Print the day in uppercase
+print(day_name.upper())
