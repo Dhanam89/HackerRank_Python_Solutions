@@ -1,0 +1,14 @@
+cube = lambda x: x**3 # complete the lambda function 
+
+def fibonacci(n):
+    # Return a list of first n Fibonacci numbers
+    fib = [0, 1]
+    for _ in range(2, n):
+        fib.append(fib[-1] + fib[-2])
+    return fib[:n]  # Return first n elements (handles n<2 too)
+
+
+
+if __name__ == '__main__':
+    n = int(input())
+    print(list(map(cube, fibonacci(n))))
