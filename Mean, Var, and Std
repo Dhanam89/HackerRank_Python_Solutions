@@ -1,0 +1,19 @@
+import numpy as np
+
+# Read dimensions
+N, M = map(int, input().split())
+
+# Read the array
+arr = np.array([list(map(int, input().split())) for _ in range(N)])
+
+# Calculate mean along axis 1
+mean_val = np.mean(arr, axis=1)
+print(mean_val)
+
+# Calculate variance along axis 0
+var_val = np.var(arr, axis=0)
+print(var_val)
+
+# Calculate standard deviation along axis none
+std_val = np.std(arr, axis = None)
+print(f"{np.std(arr):.11f}")
