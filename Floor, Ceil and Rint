@@ -1,0 +1,13 @@
+import numpy as np
+
+# Read input as a 1D float array
+A = np.array(list(map(float, input().split())))
+
+# Print floor of A
+print(np.floor(A))
+
+# Print ceil of A
+print(np.ceil(A))
+
+# Print rint (round to nearest int) of A
+print(np.rint(A))
