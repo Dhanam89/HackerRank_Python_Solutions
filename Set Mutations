@@ -1,0 +1,9 @@
+n = int(input())
+A = set(map(int, input().split()))
+N = int(input())
+for _ in range(N):
+    cmd, _= input().split()
+    my_set = set(map(int, input().split()))
+    getattr(A, cmd)(my_set)
+    
+print(sum(A))
