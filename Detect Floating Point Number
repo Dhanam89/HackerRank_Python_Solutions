@@ -1,0 +1,29 @@
+def is_valid_float(s):
+    try:
+        # Must convert to float without error
+        float_val = float(s)
+        
+        # Check if there is exactly one '.' in the string
+        if s.count('.') != 1:
+            return False
+        
+        # Check for presence of digits after the decimal point
+        # Split by '.' and check the part after decimal point has digits
+        integer_part, decimal_part = s.split('.', 1)
+        
+        # decimal_part must have at least one digit and only digits
+        if not decimal_part or not decimal_part.isdigit():
+            return False
+        
+        # integer_part can be empty or just + or - or digits
+        # Valid examples: '+', '-', '', '+12', '-1', '0'
+        if integer_part and not (integer_part in ['+', '-'] or integer_part.lstrip('+-').isdigit()):
+            return False
+        
+        return True
+    except:
+        return False
+
+if __name__ == '__main__':
+    for _ in range(int(input())):
+        print(is_valid_float(input().strip()))
