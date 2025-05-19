@@ -1,0 +1,13 @@
+import math
+
+AB = int(input())
+BC = int(input())
+
+# Calculate the angle in radians
+theta_rad = math.atan2(AB, BC)
+
+# Convert to degrees
+theta_deg = round(math.degrees(theta_rad))
+
+# Safely print angle with degree symbol
+print(f"{theta_deg}\u00b0")
