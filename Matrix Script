@@ -1,0 +1,23 @@
+import math
+import os
+import random
+import re
+import sys
+
+
+
+
+# Read dimensions
+n, m = map(int, input().split())
+
+# Read matrix
+matrix = [input() for _ in range(n)]
+
+# Read column-wise (top to bottom, left to right)
+decoded = ''.join(matrix[i][j] for j in range(m) for i in range(n))
+
+# Replace non-alphanumeric characters that are **between** alphanumeric ones with a space
+cleaned = re.sub(r'(?<=\w)([^\w\d]+)(?=\w)', ' ', decoded)
+
+# Print result
+print(cleaned)
