@@ -1,0 +1,12 @@
+from itertools import permutations
+
+# Read input
+s, r = input().split()
+r = int(r)
+
+# Generate all permutations of size r and sort them
+perm = sorted(permutations(s, r))
+
+# Print each permutation as a string on a separate line
+for p in perm:
+    print(''.join(p))
