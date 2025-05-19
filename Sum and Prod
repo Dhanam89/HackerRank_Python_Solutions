@@ -1,0 +1,15 @@
+import numpy as np
+
+# Read dimensions N (rows), M (columns)
+N, M = map(int, input().split())
+
+# Read the 2-D array
+arr = np.array([list(map(int, input().split())) for _ in range(N)])
+
+# Sum along axis 1 (sum of each row)
+sum_axis_1 = np.sum(arr, axis=0)
+
+# Product of the sums
+prod_of_sum = np.prod(sum_axis_1)
+
+print(prod_of_sum)
