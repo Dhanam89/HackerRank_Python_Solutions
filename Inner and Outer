@@ -1,0 +1,10 @@
+import numpy as np
+
+A = np.array(list(map(int, input().split())))
+B = np.array(list(map(int, input().split())))
+
+# Inner product
+print(np.inner(A, B))
+
+# Outer product
+print(np.outer(A, B))
