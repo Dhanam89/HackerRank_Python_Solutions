@@ -1,0 +1,9 @@
+n, x = map(int, input().split())
+
+# Read marks for each subject
+marks = [list(map(float, input().split())) for _ in range(x)]
+
+# Transpose marks using zip to group by student
+for student_marks in zip(*marks):
+    avg = sum(student_marks) / x
+    print(f"{avg:.1f}")
