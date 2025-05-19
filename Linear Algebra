@@ -1,0 +1,16 @@
+import numpy as np
+
+# Read the dimension of the square matrix
+n = int(input())
+
+# Read the matrix rows
+matrix = [list(map(float, input().split())) for _ in range(n)]
+
+# Convert to numpy array
+arr = np.array(matrix)
+
+# Compute determinant
+det = np.linalg.det(arr)
+
+# Print rounded determinant
+print(round(det, 2))
