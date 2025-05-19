@@ -1,0 +1,10 @@
+T = int(input())  # Number of test cases
+
+for _ in range(T):
+    _ = int(input())  # Number of elements in set A (not needed)
+    A = set(map(int, input().split()))
+    
+    _ = int(input())  # Number of elements in set B (not needed)
+    B = set(map(int, input().split()))
+    
+    print(A.issubset(B))
