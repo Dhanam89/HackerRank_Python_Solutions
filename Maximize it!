@@ -1,0 +1,28 @@
+from itertools import product
+
+# Read the first line containing K and M
+K, M = map(int, input().split())
+
+# Initialize a list to store the lists of integers
+lists = []
+
+# Read the subsequent K lines containing the lists
+for _ in range(K):
+    # Read the list, ignoring the first element (size of the list)
+    _, *lst = map(int, input().split())
+    lists.append(lst)
+
+# Initialize a variable to track the maximum modulo value
+max_modulo = 0
+
+# Generate all possible combinations of picking one element from each list
+for combination in product(*lists):
+    # Calculate the sum of squares of the selected elements
+    sum_of_squares = sum(x ** 2 for x in combination)
+    # Calculate the modulo of the sum of squares
+    modulo_value = sum_of_squares % M
+    # Update the maximum modulo value if the current one is larger
+    max_modulo = max(max_modulo, modulo_value)
+
+# Output the maximum modulo value
+print(max_modulo)
