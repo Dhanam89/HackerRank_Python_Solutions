@@ -1,0 +1,24 @@
+import itertools
+
+def calculate_probability():
+    n = int(input())  # Length of the list
+    letters = input().split()  # List of letters
+    k = int(input())  # Number of indices to select
+
+    # Total number of ways to select k indices
+    total_combinations = list(itertools.combinations(letters, k))
+    total = len(total_combinations)
+
+    # Number of ways to select k indices excluding 'a'
+    letters_without_a = [letter for letter in letters if letter != 'a']
+    combinations_without_a = list(itertools.combinations(letters_without_a, k))
+    without_a = len(combinations_without_a)
+
+    # Calculate the probability
+    probability = 1 - (without_a / total)
+
+    # Print the result rounded to 4 decimal places
+    print(f"{probability:.4f}")
+
+# Call the function
+calculate_probability()
